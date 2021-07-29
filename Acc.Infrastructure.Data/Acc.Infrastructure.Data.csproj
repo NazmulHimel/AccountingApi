@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acc.Context\Acc.Context.csproj" />
+    <ProjectReference Include="..\Acc.Domain.Entities\Acc.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Acc.Domain.Interfaces\Acc.Domain.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
