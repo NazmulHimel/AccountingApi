@@ -50,13 +50,13 @@ namespace AccountingApi
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Test Title version 1 ",
+                    Title = "Accounting version 1 ",
                     Description = "Test Description",
                     TermsOfService = "None",
                     Contact = new Contact
                     {
-                        Name = "Ali Ben Chaabene",
-                        Email = "alibenchaabene@gmail.com",
+                        Name = "IT Team",
+                        Email = "pannagroupbd.com",
                         Url = ""
                     }
 
@@ -65,13 +65,13 @@ namespace AccountingApi
                 c.SwaggerDoc("v2", new Info
                 {
                     Version = "v2",
-                    Title = "Test Title version 2 ",
+                    Title = "Accounting version 2 ",
                     Description = "Test Description",
                     TermsOfService = "None",
                     Contact = new Contact
                     {
-                        Name = "Ali Ben Chaabene",
-                        Email = "alibenchaabene@gmail.com",
+                        Name = "IT Team",
+                        Email = "pannagroupbd.com",
                         Url = ""
                     }
 
@@ -137,17 +137,7 @@ namespace AccountingApi
             };
 
             string[] productionHostOrigins = new string[] {
-                "https://admin.ivabd.com",
-                "http://admin.ivabd.com",
-                "https://ivabd.com",
-                "http://ivabd.com",
-                "https://localhost:4200",
-                "https://localhost:4201",
-                "http://localhost:4200",
-                "http://localhost:4201",
-                "http://127.0.0.1:5500",
-                "http://127.0.0.1:5501",
-                "http://demo.ivabd.com"
+                
             };
 
             _services.AddCors(options =>    // CORS middleware must precede any defined endpoints
@@ -180,7 +170,7 @@ namespace AccountingApi
 
             }
 
-            //app.UseSwagger();
+            app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Test Version 1");

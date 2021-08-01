@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Acc.Domain.Entities.DataModel
 {
-    [Table("User", Schema = "dbo")]
+    [Table("User", Schema = "Security")]
     public class User
     {
         [Key]
