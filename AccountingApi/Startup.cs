@@ -6,8 +6,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Acc.Context;
+using Acc.Domain.Interfaces.Settings;
 using Acc.HelpersAndUtilities.Connection;
 using Acc.HelpersAndUtilities.JwtSecurity;
+using Acc.Infrastructure.Data.Settings;
+using Acc.Services.Interfaces.Settings;
+using Acc.Services.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -120,6 +124,9 @@ namespace AccountingApi
 
         
             services.AddTransient<IJwtSecurityService, JwtSecurityService>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserService, UserService>();
+
 
             
 

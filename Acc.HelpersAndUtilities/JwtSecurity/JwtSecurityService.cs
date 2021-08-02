@@ -1,4 +1,5 @@
 ﻿using Acc.Context;
+using Acc.Domain.Entities.DataModel;
 using Acc.Domain.Entities.ViewModel;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -21,7 +22,7 @@ namespace Acc.HelpersAndUtilities.JwtSecurity
             _sqlServerContext = sqlServerContext;
         }
 
-        public UserViewModel GenerateJwtAdmin(UserViewModel user)
+        public User GenerateJwtAdmin(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtTokenManagement.Secret);
@@ -31,7 +32,7 @@ namespace Acc.HelpersAndUtilities.JwtSecurity
                 {
                     new Claim(ClaimTypes.Sid, user.UserId.ToString()),
                     new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(ClaimTypes.Role, user.Role),
+                    new Claim(ClaimTypes.Role, user.RoleId.ToString()),
                     new Claim("ApplicationName","pblaccounting")
                 }),
                 Issuer = _jwtTokenManagement.Issuer,
